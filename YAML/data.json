@@ -1,0 +1,55 @@
+{
+	"Schools":[ {
+		"name": "SS",
+		"principal": "Hello",
+		"Students": [{
+				"Rahul": {
+					"name": "Rahul",
+					"rno": 23,
+					"marks": 98
+				}
+			},
+			{
+				"Rajesh": {
+					"name": "Rajesh",
+					"rno": 12,
+					"marks": 93
+				}
+			},
+			{
+				"Rakesh": {
+					"name": "Rakesh",
+					"rno": 23,
+					"marks": 97
+				}
+			}
+		]
+	},
+  {
+		"name": "HH",
+		"principal": "Hello",
+		"Students": [{
+				"Rahul": {
+					"name": "Rahul",
+					"rno": 23,
+					"marks": 98
+				}
+			},
+			{
+				"Rajesh": {
+					"name": "Rajesh",
+					"rno": 12,
+					"marks": 93
+				}
+			},
+			{
+				"Rakesh": {
+					"name": "Rakesh",
+					"rno": 23,
+					"marks": 97
+				}
+			}
+		]
+	}
+]
+}

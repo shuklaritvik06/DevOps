@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<company>
+<employee>
+  <firstname>
+    Rajesh
+  </firstname>
+  <lastname>
+    Shukla
+  </lastname>
+  <salary>
+    5000000
+  </salary>
+</employee>
+<employee>
+  <firstname>
+    Ramesh
+  </firstname>
+  <lastname>
+    Shukla
+  </lastname>
+  <salary>
+    50000
+  </salary>
+</employee>
+<employee>
+  <firstname>
+    Rakesh
+  </firstname>
+  <lastname>
+    Shukla
+  </lastname>
+  <salary>
+    5000
+  </salary>
+</employee>
+</company>

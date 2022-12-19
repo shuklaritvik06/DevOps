@@ -1,0 +1,93 @@
+# Sequence type data/lists
+
+student: !!seq
+  - marks
+  - subject
+
+student: [marks,subject]
+
+# Sparse Sequence
+
+sparseseq:
+  - hey
+  - how are you
+  - kaise ho
+  -
+  - Null
+  - ~
+
+# Nested Sequence
+
+nestedseq:
+  -
+    - mango
+    - banana
+    - apple
+  -
+    - raghav
+    - rajesh
+
+# Maps (key value pairs)
+
+# !!map
+
+name: Ritvik Shukla
+food:
+  favorite: Cakes
+  hate: Karela
+
+name: Ritvik Shukla
+food: {favorite: Cakes,hate: Karela}
+
+# Pairs: key may have duplicate values
+
+# !!pairs
+
+pairType: !!pairs
+  - job: student
+  - job: teacher
+
+
+pairType: !!pairs [job: student,job: teacher]
+
+
+#  Sets
+
+# Set will allow to have only unique values
+
+names: !!set
+  ? Ritvik   # Here ritvik is a key and null value so same with all three
+  ? Anant
+  ? Tanishq
+
+#  Dictionary
+
+people: !!omap
+  - Ritvik:
+      name: Ritvik Shukla
+      age: 20
+      height: 678
+  - Anant:
+      name: Anant OP
+      age: 20
+      height: 678
+
+# Reusing Props using anchors
+
+living: &live
+  salary: 20000000000
+  home: Powai
+
+
+# Suppose we have to use this data 1000 times then, we will use anchors which will just simply you can copy the map values where we want
+
+rajesh:
+  name: Rajesh Srivastava
+  <<: *live
+
+#  This will look like
+
+rajesh:
+  home: Powai
+  name: Rajesh Srivastava
+  salary:  20000000000

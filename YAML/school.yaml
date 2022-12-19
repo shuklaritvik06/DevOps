@@ -1,0 +1,9 @@
+schools:
+  SS:
+    students:
+      - {name: Ritvik,rno: 23,marks: 92}
+      - {name: Rajesh,rno: 23,marks: 92}
+  SH:
+    students:
+      - {name: Ritvik,rno: 23,marks: 92}
+      - {name: Rajesh,rno: 23,marks: 92}

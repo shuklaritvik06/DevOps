@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<friendList>
+  <friend>
+    <name>
+      Ramesh
+    </name>
+  </friend>
+  <friend>
+    <name>
+      Suresh
+    </name>
+  </friend>
+  <bestFriend>
+    <name>
+      Rajesh
+    </name>
+  </bestFriend>
+</friendList>

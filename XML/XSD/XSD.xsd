@@ -1,0 +1,22 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!-- Company element -->
+  <xs:element name="company">
+    <!-- complexType means that there is some children parent relationship -->
+    <xs:complexType>
+      <!-- If we want the data to maintain the sequence -->
+      <xs:sequence>
+        <!-- Element inside Company -->
+        <xs:element name="employee">
+          <xs:complexType>
+            <xs:sequence>
+              <!-- All elements inside the Employee -->
+              <xs:element name="firstname" type="xs:string" />
+              <xs:element name="lastname" type="xs:string" />
+              <xs:element name="salary" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

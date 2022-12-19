@@ -1,0 +1,34 @@
+# Key Value Pair
+
+apple: "I am a red fruit"   # key: value
+12: "I am number 12"
+
+---
+
+# lists
+
+- apple
+- mango
+- banana
+- Apple  # Case Sensitive so both Apple and apple are different
+
+---
+
+# Block Style
+
+cities:
+  - new delhi
+  - mumbai
+  - Prayagraj
+
+---
+
+# Flow type storage to avoid indentation
+
+cities: [prayagraj,rannagar]
+
+---
+
+{mango: "yellow fruit",age: 23}
+
+...

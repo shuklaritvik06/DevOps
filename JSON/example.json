@@ -1,0 +1,59 @@
+{
+	"Schools": [
+
+		{
+			"PSA": {
+				"fees": 2000,
+				"students": 500
+			}
+
+		},
+		{
+			"SSD": {
+				"fees": 5000,
+				"students": 1500
+			}
+		},
+		{
+			"EES": {
+				"fees": 9000,
+				"students": 2500
+			}
+		},
+    {
+      "OS": {
+        "fees": 22000,
+        "students": null
+      }
+    }
+	],
+  "Colleges": [
+
+    		{
+    			"PSA": {
+    				"fees": 112000,
+    				"students": 1500
+    			}
+
+    		},
+    		{
+    			"SSD": {
+    				"fees": 511000,
+    				"students": 1500
+    			}
+    		},
+    		{
+    			"EES": {
+    				"fees": 911000,
+    				"students": 500
+    			}
+    		},
+        {
+          "OS": {
+            "fees": 122000,
+            "students": null,
+            "principals": ["Rakesh","Ramesh"]
+          }
+        }
+  ]
+}

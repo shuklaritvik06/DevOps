@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<Schools>
+  <School medium="en">
+    <name>
+      Saint Joseph School
+    </name>
+    <estab>
+      1986
+    </estab>
+    <studentsnum>
+      1500
+    </studentsnum>
+    <numteachers>
+      50
+    </numteachers>
+    <fees>
+      40000
+    </fees>
+  </School>
+  <School medium="hin">
+    <name>
+      Bal Vidyapeeth
+    </name>
+    <estab>
+      1890
+    </estab>
+    <studentsnum>
+      1900
+    </studentsnum>
+    <numteachers>
+      40
+    </numteachers>
+    <fees>
+      5000
+    </fees>
+  </School>
+  <School medium="urdu">
+    <name>
+      Urdu College
+    </name>
+    <estab>
+      2000
+    </estab>
+    <studentsnum>
+      2000
+    </studentsnum>
+    <numteachers>
+      20
+    </numteachers>
+    <fees>
+      10000
+    </fees>
+  </School>
+</Schools>

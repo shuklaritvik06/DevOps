@@ -1,0 +1,77 @@
+# String Variables
+
+name: Ritvik Shukla
+job: 'SWE'
+salary: "200000000"
+
+# Multiline entry
+
+bio: |
+  Hey I am Ritvik Shukla a cool person hehe.
+  I love Open Source.
+
+# Single line in Multiple lines
+
+message: >
+this will
+all be
+in one single line.
+
+# Same as
+
+message: this will all be in one single line.
+
+# Integer
+
+number: 100
+
+# Float
+
+progress: 97.77
+
+# Boolean
+
+booleanValue: No  # n,N,false,False,FALSE
+                  # Same for true-> yes, y, Y, true, True, TRUE
+
+# Specify the types
+
+#  Integer
+
+zero: !!int 0
+positiveValue: !!int 44
+negativeNumber: !!int -45
+binaryNum: !!int 0b11001
+octalNum: !!int 06574
+hexa: !!int 0x34
+commaValues: !!int +540_000 # 540,000
+commaValues: !!int -540_000 # -540,000
+exponents: 6.065E10
+
+# Floating Point
+
+marks: !!float 56.89
+infinite: !!float .inf # infinite: Infinite
+not a num: .nan
+
+# Null
+
+khatamValue: !!null Null # null, NULL ~
+~: null key
+
+# Arrays Representation
+
+
+cities:
+  - new delhi
+  - mumbai
+  - Prayagraj
+
+
+cities: [prayagraj,rannagar]
+
+{mango: "yellow fruit",age: 23}
+
+# Dates and time
+
+dateAndTime: !!timestamp 2022-02-03T17:13:00
