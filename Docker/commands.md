@@ -1,0 +1,26 @@
+# Docker Commands
+
+- docker search Name
+- docker --version
+- docker pull --platform Linux/x86_64 Name
+- docker run --env KEY=VALUE -d name
+- docker ps --all
+- docker stop ID
+- docker restart ID
+- docker kill ID
+- docker login
+- docker rmi ID
+- docker run -p 1234:1232 Hello
+- docker images
+- docker logs ID/name
+- docker exec -it ID/name Shell
+- docker network ls
+- docker network create name
+- Containers within the same network specified using --net flag can communicate with just a container name
+- docker container prune -f
+- docker top name/id
+- docker stats name/id
+- docker inspect name/id
+- docker-compose -f file up
+- docker-compose -f file down
+- docker run -v host:container

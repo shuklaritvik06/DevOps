@@ -1,0 +1,21 @@
+version: '3'
+services:
+  mongo:
+    image: <image_name>
+    container_name: <container_name>
+    restart: always
+    ports:
+      - "<host_port>:<container_port>"
+    volumes:
+      - <host_path>:<container_path>
+    environment:
+      - <key>=<value>
+    command: <command>
+    logging:
+      driver: <logging_driver>
+      options:
+        <key>: <value>
+# container_name: Sets a name for the container.
+# restart: Specifies when to restart the container (e.g. always, on-failure, etc.).
+# command: Overrides the default command specified in the Docker image.
+# logging: Configures logging for the container. The driver option specifies the logging driver to use (e.g. json-file, syslog, etc.), and the options option specifies any logging driver options.
