@@ -15,3 +15,5 @@ ConfigMap is very useful for external configuration of application.
 Secret use external secret data in base64 encoded.
 
 StatefulSet for managing consistency during database interaction.
+
+The Kubelet is responsible for managing the deployment of pods to Kubernetes nodes. It receives commands from the API server and instructs the container runtime to start or stop containers as needed.
