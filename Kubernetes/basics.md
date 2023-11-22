@@ -1,6 +1,6 @@
 # Kubernetes
 
-- Kubernetes is a open source container orchestration tool. It helps us to manage the containers developed by google.
+- Kubernetes is a open source container orchestration tool. It helps us to manage the containers, and it is developed by google.
 
 ## Node and POD
 
