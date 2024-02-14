@@ -1,11 +1,17 @@
-example.out:
+# := -> Instant Evaluation
+# = -> Lazily evaluated when we actually call variable
+
+
+exampleout:
 	gcc example.c -o example.out
 example: example.c
 	gcc example.c -o example
 files := hello.txt hi.txt
-read_file: ${files}
+read_file: 
+	${files}
 	cat ${files} > data.txt
-all: one
+all: 
+	one
 one:
 	echo $@
 
@@ -16,12 +22,17 @@ one:
 # Outputs all prerequisites newer than the target
 # $?
 content = "hello:\n\ttouch inside_file"
+content ?= "hlo:\n\ttosuch inside_file"
 content += "\n\t@echo \"---MAKEFILE CONTENTS---\""
 override content = "hello"
+# Ignored as override hai upar wale me
+content = "hehe"
 export temp=HELLO
 # The @ symbol will help to not output command in the terminal
-all: greet=hello
-all:
+all4: 
+	greet=hello
+
+all3:
 	@echo "---MAKEFILE CONTENTS---"
 	echo $$HOME
 	echo ${temp}
@@ -31,7 +42,7 @@ all:
 clean:
 	rm Makefile-01
 flag =ok
-all:
+all1:
 ifeq ($(flag), ok)
 	echo "flag equals ok"
 else
@@ -39,7 +50,7 @@ else
 endif
 
 blank=
-all:
+all2:
 ifeq ($(strip($(blank))),)
 	echo "blank is empty"
 else
@@ -51,7 +62,7 @@ endif
 hello =
 flag = $(hello)
 
-all:
+all5:
 ifdef flag
 	echo "flag is defined"
 endif
@@ -61,5 +72,5 @@ endif
 
 message := Hello World
 result := $(foreach word,$(message),$(word)!)
-all:
+all11:
 	@echo $(result)
