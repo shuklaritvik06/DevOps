@@ -6,7 +6,7 @@ Learning
 
 Hands On
 
-- [ ] Nginx
-- [ ] Apache2
+- [x] Nginx
+- [x] Apache2
 - [ ] Terraform
 - [ ] Kubernetes Deployment
