@@ -25,17 +25,18 @@ Attributes must be quoted, example
 </friendList>
 
 ```
+
 Nesting must be done properly.
 
 Entity reference
 
-| Character  |Entity reference  |
-|:-:|:-|
-| & | &amp; |
-| < | &lt; |
-| > | &gt; |
-| " | &quot; |
-| ' | &apos; |
+| Character | Entity reference |
+| :-------: | :--------------- |
+|     &     | &amp;            |
+|     <     | &lt;             |
+|     >     | &gt;             |
+|     "     | &quot;           |
+|     '     | &apos;           |
 
 **Comments**
 
@@ -77,7 +78,6 @@ Suppose we have two XML document.
 
 So we can see that these two have a same table name, so if these are written in the same XML file it will create a conflict and to solve these name conflicts we use **prefix**
 
-
 ```xml
 <r:table>
   <r:name>
@@ -109,7 +109,6 @@ So we can see that these two have a same table name, so if these are written in 
 **xmlns Attribute**
 
 The Namespace can be defined by an xmlns Attribute in the start tag of the element, All child elements with the same prefix are associated with the same namespace.
-
 
 ```xml
 
@@ -144,7 +143,6 @@ Or we can declared the namespace in the root element too, then we don't have to 
 **Default Namespaces**
 
 Defining a default namespace for an element saves us from using prefixes in all the child elements.
-
 
 ```XML
 <table xmlns="URI">
@@ -199,7 +197,7 @@ Dom is a programming interface (API).
 
 **Absolute XPath**
 
-`/bookstore/book[2]/author`  = Ramesh
+`/bookstore/book[2]/author` = Ramesh
 `/bookstore/book[1]/title[@lang="en"]` = Everyday Italian
 
 **Relative XPath**
@@ -209,7 +207,6 @@ Dom is a programming interface (API).
 **XSLT**
 
 XSL is just a styling Language to convert XML to a bit of good looking format like HTML.
-
 
 .xsl extension
 

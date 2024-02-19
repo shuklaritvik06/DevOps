@@ -1,7 +1,7 @@
 # String Variables
 
 name: Ritvik Shukla
-job: 'SWE'
+job: "SWE"
 salary: "200000000"
 
 # Multiline entry
@@ -13,13 +13,13 @@ bio: |
 # Single line in Multiple lines
 
 message: >
-this will
-all be
-in one single line.
+  this will
+  all be
+  in one single line.
 
 # Same as
 
-message: this will all be in one single line.
+message_single: this will all be in one single line.
 
 # Integer
 
@@ -31,8 +31,9 @@ progress: 97.77
 
 # Boolean
 
-booleanValue: No  # n,N,false,False,FALSE
-                  # Same for true-> yes, y, Y, true, True, TRUE
+booleanValue:
+  No # n,N,false,False,FALSE
+  # Same for true-> yes, y, Y, true, True, TRUE
 
 # Specify the types
 
@@ -41,11 +42,10 @@ booleanValue: No  # n,N,false,False,FALSE
 zero: !!int 0
 positiveValue: !!int 44
 negativeNumber: !!int -45
-binaryNum: !!int 0b11001
 octalNum: !!int 06574
 hexa: !!int 0x34
-commaValues: !!int +540_000 # 540,000
-commaValues: !!int -540_000 # -540,000
+commaValues: +540_000 # 540,000
+commaValuesNegative: -540_000 # -540,000
 exponents: 6.065E10
 
 # Floating Point
@@ -61,16 +61,12 @@ khatamValue: !!null Null # null, NULL ~
 
 # Arrays Representation
 
-
 cities:
   - new delhi
   - mumbai
   - Prayagraj
 
-
-cities: [prayagraj,rannagar]
-
-{mango: "yellow fruit",age: 23}
+cities_arr: [prayagraj, rannagar]
 
 # Dates and time
 
