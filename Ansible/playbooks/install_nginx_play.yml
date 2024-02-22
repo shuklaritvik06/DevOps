@@ -1,0 +1,22 @@
+---
+- name: Install Nginx Playbook
+  hosts: servers
+  become: yes
+  vars:
+    - user: ramesh
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: latest
+
+    - name: Start Nginx for {{ user }}
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Copy React App Build
+      copy:
+        src: /path/to/your/react-app/build/*
+        dest: /var/www/html

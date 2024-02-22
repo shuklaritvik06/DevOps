@@ -1,0 +1,23 @@
+[servers]
+server_1 ansible_host=16.171.142.78
+server_2 ansible_host=16.171.162.122
+
+[web_servers]
+web1 ansible_host=192.168.1.10
+web2 ansible_host=192.168.1.11
+
+[db_servers]
+db1 ansible_host=192.168.1.20
+db2 ansible_host=192.168.1.21
+
+[app_servers]
+app1 ansible_host=192.168.1.30
+app2 ansible_host=192.168.1.31
+
+[loadbalancers]
+lb1 ansible_host=192.168.1.40
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_user=your_username
+ansible_ssh_private_key=/path/to/your/private_key.pem
