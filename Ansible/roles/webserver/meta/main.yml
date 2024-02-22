@@ -1,0 +1,20 @@
+galaxy_info:
+  author: Ritvik Shukla
+  description: Installs Nginx and configures a minimal test webserver
+  company: WebXDAO
+  license: Apache-2.0
+  role_name: webserver
+  min_ansible_version: "2.1"
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+        - focal
+
+  galaxy_tags:
+    - nginx
+    - webserver
+    - development
+    - test
+
+dependencies: []

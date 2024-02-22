@@ -1,0 +1,3 @@
+# Higher precedence variable values which will override the default values
+
+nginx_custom_directory: /home/ubuntu/nginx
