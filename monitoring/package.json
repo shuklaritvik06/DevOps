@@ -1,0 +1,16 @@
+{
+  "name": "monitoring",
+  "version": "1.0.0",
+  "description": "- [x] Prometheus - [x] Grafana - [x] Loki",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "prom-client": "^15.1.0"
+  }
+}
