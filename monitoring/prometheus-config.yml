@@ -1,7 +1,20 @@
 global:
+  # How frequently to scrape targets by default.
   scrape_interval: 4s
+  # How frequently to evaluate rules.
+  evaluation_interval: 15s
+  # Timeout of scraping
+  scrape_timeout: 10s
+  # Attach these labels to any time series or alerts when communicating with the server
+  external_labels:
+    monitor: 'prometheus-monitor'
+  # File to which PromQL queries are logged.
+  query_log_file: 'prometheus-query-log.log'
 
+
+# Scrape configurations
 scrape_configs:
-  - job_name: prometheus
+  - job_name: 'prometheus'
     static_configs:
       - targets: ["192.168.125.230:5000"]
+
