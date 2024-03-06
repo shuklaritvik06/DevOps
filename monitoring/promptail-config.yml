@@ -1,0 +1,30 @@
+# Server configuration
+server:
+  http_listen_port: 9080    # HTTP port for server
+  grpc_listen_port: 0       # gRPC port, set to 0 to disable
+
+# File path for positions
+positions:
+  filename: /tmp/positions.yaml
+
+# Client configurations
+clients:
+  - url: http://loki:3100/loki/api/v1/push   # Loki push endpoint URL
+
+# Scraping configurations
+scrape_configs:
+  # Job configuration for system logs
+  - job_name: system
+    static_configs:
+      # Targets for system logs
+      - targets:
+          - localhost
+        labels:
+          job: varlogs            # Job label for varlogs
+          __path__: /var/log/*log # File path pattern for varlogs
+      # Targets for Grafana logs
+      - targets:
+          - localhost
+        labels:
+          job: grafanalogs        # Job label for grafanalogs
+          __path__: /var/log/grafana/*log  # File path pattern for grafanalogs
