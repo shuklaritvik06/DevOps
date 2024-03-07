@@ -3,9 +3,9 @@ const client = require('prom-client');
 const responseTime = require('response-time');
 
 const collectDefaultMetrics = client.collectDefaultMetrics;
+
 const Registry = client.Registry;
 const register = new Registry();
-collectDefaultMetrics({ register });
 
 const app = express()
 
@@ -14,6 +14,7 @@ const reqResponseAvg = new client.Gauge({
     help: 'Request response time',
     labelNames: ['method','status', 'route'],
     aggregator: "average",
+    registers: [register]
 })
 
 const reqResponseHisto = new client.Histogram({
@@ -21,6 +22,7 @@ const reqResponseHisto = new client.Histogram({
     name: "req_response_histo",
     buckets: [100,200,300,400,500,600,800],
     labelNames: ['method','status', 'route'],
+    registers: [register]
 })
 
 
@@ -28,7 +30,10 @@ const reqCounter = new client.Counter({
     help: "Request Response Counter",
     name: "req_response_counter",
     labelNames: ['method','status', 'route'],
+    registers: [register]
 })
+
+collectDefaultMetrics({ register });
 
 app.use(responseTime((req,res,time)=>{
     reqCounter.labels({
