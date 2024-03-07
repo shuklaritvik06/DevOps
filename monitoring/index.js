@@ -13,7 +13,6 @@ const reqResponseAvg = new client.Gauge({
     name:'req_response_avg',
     help: 'Request response time',
     labelNames: ['method','status', 'route'],
-    registers: [register],
     aggregator: "average",
 })
 
@@ -22,7 +21,6 @@ const reqResponseHisto = new client.Histogram({
     name: "req_response_histo",
     buckets: [100,200,300,400,500,600,800],
     labelNames: ['method','status', 'route'],
-    registers: [register],
 })
 
 
@@ -30,7 +28,6 @@ const reqCounter = new client.Counter({
     help: "Request Response Counter",
     name: "req_response_counter",
     labelNames: ['method','status', 'route'],
-    registers: [register.clear()],
 })
 
 app.use(responseTime((req,res,time)=>{
