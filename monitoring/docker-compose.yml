@@ -5,10 +5,8 @@ services:
     container_name: prometheus
     ports:
     - 9090:9090
-    command:
-    - --config.file=/etc/config/prometheus.yml
     volumes:
-    - ./prometheus-config.yml:/etc/config/prometheus.yml
+      - ./prometheus-config.yml:/etc/prometheus/prometheus.yml
     depends_on:
     - cadvisor
   cadvisor:
