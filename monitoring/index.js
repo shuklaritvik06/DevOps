@@ -9,21 +9,50 @@ collectDefaultMetrics({ register });
 
 const app = express()
 
-const reqResponse = new client.Gauge({
-    name:'req_response',
+const reqResponseAvg = new client.Gauge({
+    name:'req_response_avg',
     help: 'Request response time',
     labelNames: ['method','status', 'route'],
     registers: [register],
     aggregator: "average",
+    enableExemplars: true
+})
+
+const reqResponseHisto = new client.Histogram({
+    help: "Request Response Histogram",
+    name: "req_response_histo",
+    buckets: [100,200,300,400,500,600,800],
+    labelNames: ['method','status', 'route'],
+    registers: [register],
+    enableExemplars: true
+})
+
+
+const reqCounter = new client.Counter({
+    help: "Request Response Histogram",
+    name: "req_response_counter",
+    labelNames: ['method','status', 'route'],
+    registers: [register],
+    enableExemplars: true
 })
 
 app.use(responseTime((req,res,time)=>{
-    reqResponse.labels({
+    reqCounter.labels({
+        method: req.method,
+        status: res.statusCode,
+        route: req.url
+    }).inc()
+    reqResponseAvg.labels({
         method: req.method,
         status: res.statusCode,
         route: req.url
     })
-    reqResponse.set(time)
+    reqResponseHisto.labels({
+        method: req.method,
+        status: res.statusCode,
+        route: req.url
+    }).observe(time)
+    reqResponseAvg.set(time)
 }))
 
 app.get("/", (req,res)=>{
