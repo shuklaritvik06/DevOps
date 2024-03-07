@@ -56,7 +56,13 @@ app.get("/", (req,res)=>{
 
 app.get("/metrics", (req, res) => {
     res.setHeader("Content-Type", register.contentType);
-    res.end(register.metrics());
+    
+    register.metrics()
+        .then(metrics => res.end(metrics))
+        .catch(error => {
+            console.error("Error generating metrics:", error);
+            res.status(500).end();
+        });
 });
 
 app.listen(5000,()=>{
