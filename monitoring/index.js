@@ -29,7 +29,7 @@ const reqResponseHisto = new client.Histogram({
 
 
 const reqCounter = new client.Counter({
-    help: "Request Response Histogram",
+    help: "Request Response Counter",
     name: "req_response_counter",
     labelNames: ['method','status', 'route'],
     registers: [register],
