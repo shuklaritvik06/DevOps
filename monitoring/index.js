@@ -55,7 +55,8 @@ app.get("/", (req,res)=>{
 
 
 app.get("/metrics", (req,res)=>{
-    res.setHeader("Content-Type", register.contentType).send(register.metrics())    
+    res.setHeader("Content-Type", register.contentType)
+    res.send(register.metrics())    
 })
 
 app.listen(5000,()=>{
