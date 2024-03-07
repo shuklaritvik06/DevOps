@@ -1,3 +1,20 @@
 {
-  "ansible.python.interpreterPath": "/home/ritvik/testing/venv/bin/python"
+  "ansible.python.interpreterPath": "/home/ritvik/testing/venv/bin/python",
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default",
+        "enableSsl": "Disabled"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MySQL",
+      "database": "hello",
+      "username": "root",
+      "name": "mysql",
+      "connectionTimeout": 60,
+      "askForPassword": true
+    }
+  ]
 }
