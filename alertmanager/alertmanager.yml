@@ -1,0 +1,24 @@
+groups:
+- name: PushgatewayAlerts
+  rules:
+  - alert: PushgatewayDown
+    expr: up{job="pushgateway"} != 0
+    for: 10m
+    labels:
+      severity: page
+    annotations:
+      summary: A Pushgateway is down
+  - alert: PushesDelayed
+    expr: time() - push_time_seconds{job="pushgateway"} &gt; 300
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: Pushgateway pushers are delayed
+  - alert: InconsistentMetrics
+    expr: rate(pushgateway_http_requests_total{code="400",handler="push",job="pushgateway"}[2m]) &gt; 0
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: Someone is continuously trying to push inconsistent metrics to the Pushgateway

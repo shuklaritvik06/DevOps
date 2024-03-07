@@ -1,0 +1,65 @@
+# Indicates whether authentication is enabled. In this case, it's set to false.
+auth_enabled: false
+
+# Configuration for the Loki server.
+server:
+  # Port for HTTP communication.
+  http_listen_port: 3100
+  # Port for gRPC communication.
+  grpc_listen_port: 9096
+
+# Common configuration settings.
+common:
+  # IP address for the Loki instance.
+  instance_addr: 127.0.0.1
+  # Prefix for various file paths.
+  path_prefix: /tmp/loki
+  # Storage configuration for Loki.
+  storage:
+    filesystem:
+      # Directory for storing chunks.
+      chunks_directory: /tmp/loki/chunks
+      # Directory for storing rules.
+      rules_directory: /tmp/loki/rules
+  # Replication factor for the storage.
+  replication_factor: 1
+  # Ring configuration for key-value store.
+  ring:
+    kvstore:
+      store: inmemory
+
+# Query range configuration.
+query_range:
+  results_cache:
+    cache:
+      embedded_cache:
+        # Enable/disable embedded cache for query results.
+        enabled: true
+        # Maximum size of the cache in megabytes.
+        max_size_mb: 100
+
+# Schema configuration for Loki.
+schema_config:
+  configs:
+    - from: 2020-10-24
+      # Store for schema configuration.
+      store: boltdb-shipper
+      # Object store for schema configuration.
+      object_store: filesystem
+      # Schema version.
+      schema: v11
+      index:
+        # Prefix for index files.
+        prefix: index_
+        # Period for index rotation in hours.
+        period: 24h
+
+# Ruler configuration for alerts.
+ruler:
+  # URL for Alertmanager communication.
+  alertmanager_url: http://localhost:9093
+
+# Analytics and reporting configuration.
+# Uncomment the following lines to disable reporting.
+#analytics:
+reporting_enabled: false
