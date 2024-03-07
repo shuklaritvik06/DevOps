@@ -54,10 +54,10 @@ app.get("/", (req,res)=>{
 })
 
 
-app.get("/metrics", (req,res)=>{
-    res.setHeader("Content-Type", register.contentType)
-    res.send(register.metrics())    
-})
+app.get("/metrics", (req, res) => {
+    res.setHeader("Content-Type", register.contentType);
+    res.end(register.metrics());
+});
 
 app.listen(5000,()=>{
     console.log("Server is running on port 5000")
