@@ -1,24 +1,49 @@
-groups:
-- name: PushgatewayAlerts
-  rules:
-  - alert: PushgatewayDown
-    expr: up{job="pushgateway"} != 0
-    for: 10m
-    labels:
-      severity: page
-    annotations:
-      summary: A Pushgateway is down
-  - alert: PushesDelayed
-    expr: time() - push_time_seconds{job="pushgateway"} &gt; 300
-    for: 5m
-    labels:
-      severity: critical
-    annotations:
-      summary: Pushgateway pushers are delayed
-  - alert: InconsistentMetrics
-    expr: rate(pushgateway_http_requests_total{code="400",handler="push",job="pushgateway"}[2m]) &gt; 0
-    for: 5m
-    labels:
-      severity: critical
-    annotations:
-      summary: Someone is continuously trying to push inconsistent metrics to the Pushgateway
+# Global configuration settings for Alertmanager
+global:
+  # Maximum duration to wait for an alert to be resolved
+  resolve_timeout: 5m
+
+# Routing configuration
+route:
+  # Group alerts by these labels: alertname, severity, and cluster
+  group_by: ['alertname', 'severity', 'cluster']
+  # Wait time before dispatching group of alerts
+  group_wait: 10s
+  # Interval at which the group of alerts is re-evaluated
+  group_interval: 5m
+  # Interval at which alerts that have been sent or resolved are re-evaluated
+  repeat_interval: 3h
+  # Default receiver for all alerts
+  receiver: 'default'
+  routes:
+  - receiver: 'database-alert-reciever'
+    group_wait: 10s
+    matchers:
+    - service=~"mysql|cassandra"
+
+# Configuration for receivers (notification channels)
+receivers:
+  # Email receiver configuration
+  - name: 'default'
+    email_configs:
+      # Email recipient address
+    - to: 'ritvikshukla261@gmail.com'
+      # Sender address for the email
+      from: 'ritvikshukla261@gmail.com'
+      # SMTP server details
+      smarthost: 'smtp.google.com:587'
+      # SMTP server authentication username
+      auth_username: 'your-username'
+      # SMTP server authentication password
+      auth_password: 'your-password'
+      # Require TLS for secure communication
+      require_tls: true
+
+# Inhibition rules to suppress alerts based on certain conditions
+inhibit_rules:
+  # Inhibit critical alerts when there are warning alerts with the same alertname, dev, and instance labels
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'dev', 'instance']

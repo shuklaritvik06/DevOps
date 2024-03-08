@@ -1,0 +1,26 @@
+groups:
+- name: PushgatewayAlerts   # Group name for the set of rules
+  rules:
+  - alert: PushgatewayDown   # Alert name for a Pushgateway being down
+    expr: up{job="pushgateway"} != 0   # Prometheus expression to check if Pushgateway is up
+    for: 10m   # The condition should persist for 10 minutes for the alert to trigger
+    labels:
+      severity: page   # Label indicating the severity level for this alert
+    annotations:
+      summary: A Pushgateway is down   # Short description of the alert
+
+  - alert: PushesDelayed   # Alert name for delayed Pushgateway pushers
+    expr: time() - push_time_seconds{job="pushgateway"} > 300   # Expression to check if pushers are delayed by more than 300 seconds
+    for: 5m   # The condition should persist for 5 minutes for the alert to trigger
+    labels:
+      severity: critical   # Label indicating the severity level for this alert
+    annotations:
+      summary: Pushgateway pushers are delayed   # Short description of the alert
+
+  - alert: InconsistentMetrics   # Alert name for continuously pushing inconsistent metrics
+    expr: rate(pushgateway_http_requests_total{code="400",handler="push",job="pushgateway"}[2m]) > 0   # Expression to detect inconsistent metrics pushing
+    for: 5m   # The condition should persist for 5 minutes for the alert to trigger
+    labels:
+      severity: critical   # Label indicating the severity level for this alert
+    annotations:
+      summary: Someone is continuously trying to push inconsistent metrics to the Pushgateway   # Short description of the alert

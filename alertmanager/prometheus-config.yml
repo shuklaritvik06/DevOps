@@ -1,9 +1,17 @@
 global:
   scrape_interval: 4s
+  evaluation_interval: 15s
   external_labels:
     monitor: 'prometheus-monitor'
-  query_log_file: 'prometheus-query-log.log'
+  query_log_file: './prometheus-query-log.log'
 
+rule_files:
+  - "./rules/*.yml"
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: ['alertmanager:9093']
 
 scrape_configs:
   - job_name: 'prometheus'
