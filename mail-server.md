@@ -73,3 +73,6 @@ Example:
 |----------------------|------|-----------------------------------------|
 | _dmarc.example.com   | TXT  | "v=DMARC1; p=quarantine; rua=mailto:..." |
 ```
+
+
+SPF records are just one of many DNS-based mechanisms that can help email servers confirm whether an email comes from a trusted source. Domain-based Message Authentication Reporting and Conformance (DMARC) and DomainKeys Identified Mail (DKIM) are two other mechanisms used for email authentication.
