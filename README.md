@@ -6,11 +6,3 @@ In a network layout, edge devices, including edge servers, connect separate netw
 
 The key difference between an edge server and an origin server lies in their roles within a CDN. An origin server is the central web server that handles all Internet traffic when a web property is not using a CDN. In contrast, edge servers in a CDN store and cache content in various locations, reducing the load on origin servers and improving the speed of content delivery by bringing it closer to the end-users. Origin servers remain essential for maintaining server-side code and critical data.
 
-## AWS Services
-
-- [x] ECS
-- [ ] EKS
-- [x] Lambda
-- [x] S3
-- [ ] CloudFormation
-- [x] Load Balancers
