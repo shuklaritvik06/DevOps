@@ -10,6 +10,7 @@ The key difference between an edge server and an origin server lies in their rol
 
 - [x] ECS
 - [ ] EKS
+- [x] Lambda
 - [x] S3
 - [ ] CloudFormation
 - [x] Load Balancers
