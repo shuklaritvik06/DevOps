@@ -44,3 +44,5 @@
 - Show properties of a unit: `systemctl show [unit]`
 - Mask a unit (disable and symlink to /dev/null): `systemctl mask [unit]`
 - Unmask a unit: `systemctl unmask [unit]`
+
+- Reload systemd manager configuration: `systemctl daemon-reload`
