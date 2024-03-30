@@ -4,6 +4,7 @@
 - Stop a service: `systemctl stop [service]`
 - Restart a service: `systemctl restart [service]`
 - Show status of a service: `systemctl status [service]`
+- Edit a service: `systemctl edit [service]`
 - Enable a service to start on boot: `systemctl enable [service]`
 - Disable a service from starting on boot: `systemctl disable [service]`
 - Reload service configuration: `systemctl reload [service]`
