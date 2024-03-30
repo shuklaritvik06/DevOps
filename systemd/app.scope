@@ -1,0 +1,11 @@
+[Unit]
+Description=Example Scope Unit
+Wants=network.target
+After=network.target
+
+[Scope]
+Slice=example.slice
+CPUWeight=200
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=Example Timer Unit
+Wants=network.target
+After=network.target
+
+[Timer]
+OnBootSec=30min
+OnUnitActiveSec=1h
+Unit=example.service
+
+[Install]
+WantedBy=timers.target

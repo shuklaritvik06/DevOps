@@ -1,0 +1,10 @@
+[Unit]
+Description=Example Slice Unit
+
+[Slice]
+CPUWeight=200
+MemoryMax=1G
+IOWeight=100
+
+[Install]
+WantedBy=multi-user.target

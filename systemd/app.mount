@@ -1,0 +1,13 @@
+[Unit]
+Description=Example Mount Unit
+Requires=network-online.target
+After=network-online.target
+
+[Mount]
+What=/dev/sdb1
+Where=/mnt/example
+Type=ext4
+Options=defaults
+
+[Install]
+WantedBy=multi-user.target

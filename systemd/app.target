@@ -1,0 +1,5 @@
+[Unit]
+Description=Example Target Unit
+
+[Install]
+WantedBy=multi-user.target
