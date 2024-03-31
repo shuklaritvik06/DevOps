@@ -4,7 +4,16 @@ Wants=network-online.target
 After=network-online.target
 
 [Path]
-PathExists=/var/log/syslog
+# If the file specified exists, the configured unit is activated.
+PathExists=/opt/myfolder
+TriggerLimitBurst=200
+TriggerLimitIntervalSec=2s
+# It is activated also on simple writes to the watched file
+PathModified=/opt/myfolder
+# It is activated when the file that was open for writing is closed
+PathChanged=/opt/myfolder
+MakeDirectory=yes
+DirectoryMode=0755
 Unit=example.service
 
 [Install]

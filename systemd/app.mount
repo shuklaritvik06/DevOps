@@ -4,9 +4,17 @@ Requires=network-online.target
 After=network-online.target
 
 [Mount]
+# What to mount
 What=/dev/sdb1
+# Where to mount
 Where=/mnt/example
+# Type of the mount 
 Type=ext4
+# Working Directory with respect to the specified root
+LogsDirectory=/var/log/mounting
+LogsDirectoryMode=0755
+LogLevelMax=debug
+WorkingDirectory=
 Options=defaults
 
 [Install]

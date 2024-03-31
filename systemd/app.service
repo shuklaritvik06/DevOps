@@ -1,7 +1,7 @@
 [Unit]
 Description=Example Service Unit
-Wants=network.target
-After=network.target
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 Type=simple
@@ -10,7 +10,10 @@ Restart=always
 RestartSec=10
 User=myuser
 Group=mygroup
+ExecStartPre=/bin/echo "Starting example service"
 Environment=VAR1=value1 VAR2=value2
-
+ExecStartPost=/bin/echo "Example service started"
+ExecStop=/bin/echo "Stopping example service"
+ExecStopPost=/bin/echo "Example service stopped"
 [Install]
 WantedBy=multi-user.target
