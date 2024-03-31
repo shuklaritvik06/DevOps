@@ -7,7 +7,9 @@ terraform {
   }
 }
 provider "aws" {
-  region = "eu-north-1"
+  access_key = var.access_key
+  secret_key = var.secret_key
+  region     = "eu-north-1"
 }
 
 data "aws_ami" "ubuntu" {
@@ -23,7 +25,7 @@ data "aws_ami" "ubuntu" {
     values = ["hvm"]
   }
 
-  owners = [self]
+  owners = ["099720109477"]
 }
 
 resource "aws_instance" "web" {
