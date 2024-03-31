@@ -7,3 +7,4 @@ variable "content" {
   description = "This is the content"
   default = "My Content"
 }
+variable "user_name" {}
