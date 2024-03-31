@@ -16,3 +16,11 @@ random_string -> random is the provider and the string is the type
 ```bash
 terraform apply --var-file=filepath
 ```
+
+## Remote Backends
+
+Terraform's remote backends serve as the backbone for collaboration and scalability in infrastructure management. By storing state files in remote locations such as Amazon S3, Azure Blob Storage, or Google Cloud Storage, Terraform ensures that teams can work seamlessly on shared infrastructure projects. This approach not only centralizes state management but also enhances security and reliability by offering features like versioning and access control.
+
+## State Locking
+
+State locking adds another layer of robustness to Terraform workflows by preventing concurrent modifications to the same state file. This is particularly crucial in team environments where multiple users or automation processes might attempt to apply changes simultaneously. By employing locking mechanisms, Terraform ensures that only one operation can modify the state file at any given time, minimizing the risk of conflicts and ensuring the integrity of infrastructure deployments.
