@@ -13,10 +13,10 @@ provider "aws" {
   secret_key = var.secret_key
 }
 
-resource "aws_s3_bucket" "example" {
-  bucket = "my-tf-test-bucket"
+resource "aws_s3_bucket" "bucket_resource" {
+  bucket = "ritvikbuckethai"
   tags = {
-    Name        = "My bucket"
+    Name        = "Ritvik Shukla ki bucket"
     Environment = "Dev"
   }
 }
