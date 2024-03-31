@@ -114,14 +114,3 @@ Example:
 ```bash
 ansible-playbook -i inventory.ini --limit web_servers playbook.yml
 ```
-
-These are some essential CLI commands related to Ansible inventory management. For more details and options, refer to the [official Ansible documentation](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html).
-
-```
-
-Feel free to customize the content or add more details based on your specific needs.
-```
-
-```
-
-```
