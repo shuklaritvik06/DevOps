@@ -8,3 +8,7 @@
 6. terraform fmt - Rewrites configuration files to canonical format.
 7. terraform state <subcommand> - Manages Terraform state.
 8. terraform output - Displays outputs from Terraform state.
+
+```
+random_string -> random is the provider and the string is the type
+```
