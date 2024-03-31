@@ -30,16 +30,16 @@ data "aws_ami" "ubuntu" {
 
 locals {
   instances_map = {
-    "Ramesh": "Ami ID"
+    "Ramesh" : "Ami ID"
   }
 }
 
 resource "aws_instance" "web" {
-  for_each = local.instances_map
+  for_each      = local.instances_map
   ami           = each.value
   instance_type = "t3.micro"
 
   tags = {
-    Name = "Terraform Instance"
+    Name = each.key
   }
 }
